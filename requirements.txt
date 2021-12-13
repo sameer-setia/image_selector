@@ -1,0 +1,10 @@
+click
+Flask
+importlib-metadata
+itsdangerous
+Jinja2
+MarkupSafe
+python-dotenv
+typing_extensions
+Werkzeug
+zipp

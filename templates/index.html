@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+      .button {
+        background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+
+<body>
+<div style="width: 100%; overflow: hidden;">
+     <div style="width: 600px; float: left;">
+         <img src="{{url_for('static', filename=user_image)}}" alt="User Image" width="700">
+     </div>
+     <div style="margin-left: 800px;">
+         <a class="button" href="{{ url_for('daffodil')}}">Daffodil</a>
+    <a class="button" href="{{ url_for('g_eng')}}">G-Eng</a>
+    <a class="button" href="{{ url_for('no')}}">No</a>
+         <br>
+         <h3>Total Images Found: {{count}}</h3>
+     </div>
+</div>
+</body>
+</html>
