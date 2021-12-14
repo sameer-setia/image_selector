@@ -36,6 +36,7 @@ for i in result:
         d2[img_path] = full_path
         d[image] = img_path
 images = list(d.values())
+images.sort()
 
 
 @app.route('/')
