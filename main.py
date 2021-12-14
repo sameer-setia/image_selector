@@ -25,6 +25,7 @@ result = list(Path(os.environ.get("SOURCE_FOLDER")).rglob("*.[jJ][pP][gG]"))
 d = {}
 d1 = {}
 d2 = {}
+initial_count = 25579
 total_done = len(glob.glob(cwd + "/images/"+today+"/*/*.jpg"))
 with open("done.json", 'r') as f:
     d1 = json.load(f)
@@ -44,7 +45,10 @@ def home():
     if len(images) == 0:
         return 'no images available to review'
     full_filename = images[0]
-    return render_template("index.html", user_image=full_filename, count=total_done)
+    with open("done.json", "r") as file:
+        tmp = json.load(file)
+    new_count = len(tmp) - initial_count
+    return render_template("index.html", user_image=full_filename, count=total_done, new_count=new_count)
 
 
 @app.route('/daffodil')
